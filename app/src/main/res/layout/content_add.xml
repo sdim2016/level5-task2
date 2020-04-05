@@ -41,6 +41,7 @@
                     android:id="@+id/etTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@android:color/white"
                     android:hint="@string/title" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -60,6 +61,7 @@
                     android:id="@+id/etPlatform"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@android:color/white"
                     android:hint="@string/platform" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -77,6 +79,7 @@
                     android:id="@+id/etDay"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@android:color/white"
                     android:hint="@string/day" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -94,6 +97,7 @@
                     android:id="@+id/etMonth"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@android:color/white"
                     android:hint="@string/month" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -112,6 +116,7 @@
                     android:id="@+id/etYear"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@android:color/white"
                     android:hint="@string/year" />
             </com.google.android.material.textfield.TextInputLayout>
 
