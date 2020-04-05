@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorBackgroundDark"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".ui.AddActivity"
+    tools:context=".ui.add.AddActivity"
     tools:showIn="@layout/activity_add">
 
     <com.google.android.material.card.MaterialCardView

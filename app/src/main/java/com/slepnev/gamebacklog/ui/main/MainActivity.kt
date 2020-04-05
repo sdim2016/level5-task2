@@ -1,12 +1,12 @@
-package com.slepnev.gamebacklog.ui
+package com.slepnev.gamebacklog.ui.main
 
 import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import com.slepnev.gamebacklog.R
+import com.slepnev.gamebacklog.ui.add.AddActivity
 
 import kotlinx.android.synthetic.main.activity_main.*
 

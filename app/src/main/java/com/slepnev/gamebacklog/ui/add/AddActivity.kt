@@ -1,4 +1,4 @@
-package com.slepnev.gamebacklog.ui
+package com.slepnev.gamebacklog.ui.add
 
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
