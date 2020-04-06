@@ -12,6 +12,7 @@ import com.slepnev.gamebacklog.model.Game
 
 import kotlinx.android.synthetic.main.activity_add.*
 import kotlinx.android.synthetic.main.content_add.*
+import java.time.LocalDate
 import java.util.*
 
 const val EXTRA_GAME ="EXTRA_GAME"
@@ -35,8 +36,10 @@ class AddActivity : AppCompatActivity() {
             etDay.text.toString().isNotBlank() &&
             etMonth.text.toString().isNotBlank() &&
             etYear.text.toString().isNotBlank()) {
-            val game = Game(etTitle.text.toString(), etPlatform.text.toString(), Date(etYear.text.toString().toInt(),
-                etMonth.text.toString().toInt(), etDay.text.toString().toInt()))
+            val cal = Calendar.getInstance()
+            cal.set(etYear.text.toString().toInt(),
+                etMonth.text.toString().toInt()-1, etDay.text.toString().toInt())
+            val game = Game(etTitle.text.toString(), etPlatform.text.toString(), cal.time)
             val resultIntent = Intent()
             resultIntent.putExtra(EXTRA_GAME, game)
             setResult(Activity.RESULT_OK, resultIntent)
