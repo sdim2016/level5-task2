@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.slepnev.gamebacklog.R
 import com.slepnev.gamebacklog.model.Game
 import kotlinx.android.synthetic.main.item_game.view.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class GameAdapter(private val games:List<Game>) : RecyclerView.Adapter<GameAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -28,7 +30,12 @@ class GameAdapter(private val games:List<Game>) : RecyclerView.Adapter<GameAdapt
         fun bind(game: Game) {
             itemView.tvTitle.text = game.title
             itemView.tvPlatform.text = game.platform
-            itemView.tvDate.text = game.releaseDate.toString()
+            itemView.tvDate.text = getDateMonthYearString(game.releaseDate)
         }
+    }
+
+    private fun getDateMonthYearString(date: Date): String {
+        val formatter = SimpleDateFormat("d MMMM yyyy", Locale.ENGLISH)
+        return "Release: " + formatter.format(date)
     }
 }
