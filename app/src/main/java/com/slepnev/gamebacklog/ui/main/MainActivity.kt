@@ -29,8 +29,7 @@ class MainActivity : AppCompatActivity() {
     private val games = arrayListOf<Game>()
     private val gameAdapter = GameAdapter(games)
     private lateinit var viewModel: MainActivityViewModel
-    private lateinit var savedGame: Game
-    private lateinit var savedGamesList: List<Game>
+    private val savedGamesList = arrayListOf<Game>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,7 +61,16 @@ class MainActivity : AppCompatActivity() {
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
             R.id.action_delete -> {
+                savedGamesList.clear()
+                savedGamesList.addAll(games)
                 viewModel.deleteAllGames()
+                Snackbar.make(coordinatorLayout, "Successfully deleted backlog", Snackbar.LENGTH_LONG)
+                    .setAction("UNDO") {
+                        savedGamesList.forEach {
+                            viewModel.insertGame(it)
+                        }
+                    }
+                    .show()
                 true
             }
             else -> super.onOptionsItemSelected(item)
