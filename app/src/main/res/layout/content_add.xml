@@ -43,8 +43,10 @@
                     android:layout_height="wrap_content"
                     android:background="@android:color/white"
                     android:hint="@string/title"
+                    android:imeOptions="actionNext"
                     android:inputType="text"
-                    android:maxLines="1" />
+                    android:maxLines="1"
+                    android:nextFocusDown="@id/etPlatform" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -65,8 +67,10 @@
                     android:layout_height="wrap_content"
                     android:background="@android:color/white"
                     android:hint="@string/platform"
+                    android:imeOptions="actionNext"
                     android:inputType="text"
-                    android:maxLines="1" />
+                    android:maxLines="1"
+                    android:nextFocusDown="@id/etDay" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -85,8 +89,10 @@
                     android:layout_height="wrap_content"
                     android:background="@android:color/white"
                     android:hint="@string/day"
+                    android:imeOptions="actionNext"
                     android:inputType="number"
-                    android:maxLines="1" />
+                    android:maxLines="1"
+                    android:nextFocusRight="@id/etMonth" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -105,8 +111,10 @@
                     android:layout_height="wrap_content"
                     android:background="@android:color/white"
                     android:hint="@string/month"
+                    android:imeOptions="actionNext"
                     android:inputType="number"
-                    android:maxLines="1" />
+                    android:maxLines="1"
+                    android:nextFocusRight="@id/etYear" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
