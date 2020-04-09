@@ -6,11 +6,14 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.snackbar.Snackbar
 import com.slepnev.gamebacklog.R
 import com.slepnev.gamebacklog.model.Game
 import com.slepnev.gamebacklog.ui.add.AddActivity
@@ -26,6 +29,8 @@ class MainActivity : AppCompatActivity() {
     private val games = arrayListOf<Game>()
     private val gameAdapter = GameAdapter(games)
     private lateinit var viewModel: MainActivityViewModel
+    private lateinit var savedGame: Game
+    private lateinit var savedGamesList: List<Game>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -118,6 +123,11 @@ class MainActivity : AppCompatActivity() {
                 val position = viewHolder.adapterPosition
                 val gameToDelete = games[position]
                 viewModel.deleteGame(gameToDelete)
+                Snackbar.make(coordinatorLayout, "Successfully deleted game", Snackbar.LENGTH_LONG)
+                    .setAction("UNDO") {
+                        viewModel.insertGame(gameToDelete)
+                    }
+                    .show()
             }
         }
         return ItemTouchHelper(callback)
